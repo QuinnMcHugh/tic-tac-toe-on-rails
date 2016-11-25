@@ -1,0 +1,16 @@
+<h1>Get Beat at Tic-Tac-Toe</h1>
+<table>
+	
+		<% for i in 0..2 %>
+			<tr>
+			<% for j in 0..2 %>
+				<td>
+					<%= form_tag({x_loc: j, y_loc: i}) do %>
+					<%= submit_tag("_") %>
+					<% end %>
+				</td>
+			<% end %>
+			</tr>
+		<% end %>
+
+</table>

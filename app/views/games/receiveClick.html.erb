@@ -1,0 +1,28 @@
+<h1>Get Beat at Tic-Tac-Toe</h1>
+
+<% if @board.gameOver? %>
+	<span style="color: red;">Game over</span>
+	<% if @board.getWinner == Board::BLANK %>
+		<span style="color: green;">Cat's Game</span>
+	<% elsif @board.getWinner == Board::O %>
+		<span style="color: green;">You lose</span>
+	<% else %>
+		<span style="color: green;">You win</span>
+	<% end %>
+<% end %>
+
+<table>
+	
+		<% for i in 0..2 %>
+			<tr>
+			<% for j in 0..2 %>
+				<td>
+					<%= form_tag({x_loc: j, y_loc: i}) do %>
+					<%= submit_tag("#{@board.get(j, i)}") %>
+					<% end %>
+				</td>
+			<% end %>
+			</tr>
+		<% end %>
+
+</table>
